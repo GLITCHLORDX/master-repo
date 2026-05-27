@@ -1,0 +1,14 @@
+Package: com.master.locktime26liquid
+Name: LockTime26 Liquid
+Version: 1.1
+Architecture: iphoneos-arm
+Description: iOS 16-style liquid glass lockscreen clock iWidget for iOS 12.
+Maintainer: Master
+Author: iVintageLover / modified safely
+Section: Tweaks
+Depends: mobilesubstrate
+Filename: ./debs/LockTime26-Liquid_1.1_iphoneos-arm.deb
+Size: 4505244
+MD5sum: 149207f9061b69265e7532d0193723df
+SHA1: 1574215f20dec36033bd5a136142c6e9acd11f8d
+SHA256: 1432766259ce0efa9ec4ae6ccfdfb7e038f8924b40d2b9822bfd5991e1aa6fd5
