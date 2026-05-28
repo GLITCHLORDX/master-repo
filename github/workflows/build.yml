@@ -1,0 +1,42 @@
+name: Build SilentPillHUD DEB
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deb:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Install Theos
+        run: |
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+
+      - name: Install iOS SDKs
+        run: |
+          git clone --depth=1 https://github.com/theos/sdks.git /tmp/sdks
+          mkdir -p $HOME/theos/sdks
+          cp -R /tmp/sdks/*.sdk $HOME/theos/sdks/
+          find $HOME/theos/sdks -name module.map -execdir mv module.map module.modulemap \; || true
+
+      - name: Install ldid
+        run: |
+          brew install ldid
+
+      - name: Build rootful deb
+        run: |
+          export THEOS=$HOME/theos
+          make clean package FINALPACKAGE=1
+
+      - name: Upload DEB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SilentPillHUD-rootful-DEB
+          path: packages/*.deb
