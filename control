@@ -1,0 +1,10 @@
+Package: com.glitchlord.silentpillhud
+Name: SilentPillHUD
+Version: 1.0.9
+Architecture: iphoneos-arm
+Description: Realistic compact Silent Mode HUD with lock-screen support and modern icon sizing for iOS 12.
+Maintainer: GlitchLord
+Author: GlitchLord
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 11.0)
+Conflicts: com.ikilledappl3.rishima, applebetas.ios.tweak.willow, es.ubikstyl.sonus12, org.fwdr.sonus, com.midkin.byebyehud, me.nepeta.flashyhud, com.lnx.aerify, com.ruler225.videohud, me.nepeta.brokenhud, com.ikilledappl3.switchhud
